@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Included Workflows with imagr"
-date:   2017-03-21 22:09:21 -0700
 categories: macos imagr
 ---
 

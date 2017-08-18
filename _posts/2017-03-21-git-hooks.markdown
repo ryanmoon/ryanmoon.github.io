@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Using git hooks to avoid mistakes"
-date:   2017-08-16 22:09:21 -0700
 categories: macos git chef munki
 ---
 
