@@ -16,3 +16,5 @@ The non-hidden workflow, named Workflow, runs a script to figure out which other
 Below is an example:
 {% gist ryanmoon/e5c96192aaadf832e59a6fed65807f4e %}
 
+Note, that if you do run the `validateplist` tool from the imagr repo, it removes all comments from the document.
+
