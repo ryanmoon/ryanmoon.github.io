@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Using git hooks to avoid mistakes"
+date:   2017-08-16 22:09:21 -0700
+categories: macos git chef munki
+---
+
+Currently, I have a series of chef cookbooks and a munki repo that I consistently push up to Github. I have found using a pre-commit git hook for when I commit being helpful to avoid pushing code up that isn't quite right.
+
+An example of a typical chef cookbook git pre-commit hook:
+{% gist ryanmoon/d303a012dc7541964ce26f63578607d1 %}
+
+Since I am on MacOS, I am going to destroy all .DS_Store files.
+Then in all of my cookbooks, I have a [Rakefile](https://gist.github.com/ryanmoon/ac171ad79201667bc6912c98b334f304), and `chef exec rake style` runs rubocop and foodcritic, so that I am not commiting blatant errors in either Ruby or Chef.
+
+An example of a munki git pre-commit hook:
+{% gist ryanmoon/d7d51f1d705f4f1dbcfad149985590ac %}
+
+Again, destroy all .DS_Store files if they exist, then using plutil I do a lint check of all the property lists(or plists) in the repository. A malformed plist is going to make munki fail, and maybe I forgot to add a closing bracket or something, better to catch that before putting this code into production, or testing.
